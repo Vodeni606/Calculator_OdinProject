@@ -1,0 +1,49 @@
+.button-row {
+    display: flex;
+    gap: 10px;
+}
+
+#display{
+    display: flex;
+    padding: 20px;
+    width: 500px;
+    margin: 20px;
+}
+
+#operationContainer {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+    flex: 1; 
+}
+
+
+#buttonContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+}
+
+.calc-button {
+    flex: 1 1 calc(33.333% - 10px);
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    
+}
+.operation-button {
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #ff9800;
+    color: white;
+    cursor: pointer;
+    width: 60px; 
+}
