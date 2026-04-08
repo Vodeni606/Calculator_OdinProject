@@ -52,5 +52,26 @@ equalButton.textContent = '=';
 equalButton.className = 'operation-button';
 operationContainer.appendChild(equalButton);
 equalButton.addEventListener('click',function(){
-
+    if (currentOperator === '+'){
+    sum = parseInt(previousInput) + parseInt(currentInput);
+    display.value = sum;
+    previousInput = '';
+    currentInput = '';
+    }else if (currentOperator === '-'){
+    sum = parseInt(previousInput) - parseInt(currentInput);
+    display.value = sum;
+    previousInput = '';
+    currentInput = '';
+    }else if (currentOperator === '*'){
+    sum = parseInt(previousInput) * parseInt(currentInput);
+    display.value = sum;
+    previousInput = '';
+    currentInput = '';
+    }else if (currentOperator === '/'){
+    sum = parseInt(previousInput) / parseInt(currentInput);
+    display.value = sum;
+    previousInput = '';
+    currentInput = '';
+    }
+        
 })
