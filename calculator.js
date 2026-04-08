@@ -28,9 +28,11 @@ for(let i = 0; i < operations.length;i++){
     button.textContent = operations[i];
     button.className = 'operation-button'
 
-    button.addEventListener('click',function(){     
+    button.addEventListener('click',function(){
         currentOperator = this.textContent;
-        previousInput = currentInput;
+        if (currentInput !== '') {
+            previousInput = currentInput;
+        }
         currentInput = '';
         display.value = currentOperator;
     
@@ -63,17 +65,17 @@ equalButton.addEventListener('click',function(){
     }else if (currentOperator === '-'){
     sum = parseInt(previousInput) - parseInt(currentInput);
     display.value = sum;
-    previousInput = '';
+    previousInput = sum;
     currentInput = '';
     }else if (currentOperator === '*'){
     sum = parseInt(previousInput) * parseInt(currentInput);
     display.value = sum;
-    previousInput = '';
+    previousInput = sum;
     currentInput = '';
     }else if (currentOperator === '/'){
     sum = parseInt(previousInput) / parseInt(currentInput);
     display.value = sum;
-    previousInput = '';
+    previousInput = sum;
     currentInput = '';
     }
         
