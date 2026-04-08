@@ -3,6 +3,11 @@ const buttonContainer = document.getElementById('buttonContainer');
 const operationContainer = document.getElementById('operationContainer')
 const operations = ['+','-','/','*']; 
 
+let currentInput = '';
+let previousInput = '';
+let currentOperator = '';
+let previousOperator = '';
+
 for(let i = 0; i <= 9; i++){
 
     const button = document.createElement('button');
@@ -10,7 +15,10 @@ for(let i = 0; i <= 9; i++){
     button.textContent = i; 
 
     button.addEventListener('click',function(){
-        display.value += this.textContent;
+        currentInput += this.textContent;
+        display.value = currentInput;
+        
+
     });
     buttonContainer.appendChild(button);
 }       
@@ -21,7 +29,12 @@ for(let i = 0; i < operations.length;i++){
     button.className = 'operation-button'
 
     button.addEventListener('click',function(){
-        display.value += this.textContent;
+        currentOperator = this.textContent;
+        display.value = currentOperator;
+        previousInput = currentInput;
+        currentInput = '';
+        display.value = currentOperator;
+    
     })
     operationContainer.appendChild(button);
 }
@@ -34,4 +47,10 @@ clearButton.addEventListener('click',function(){
 })
 operationContainer.appendChild(clearButton);
 
+const equalButton = document.createElement('button');
+equalButton.textContent = '=';
+equalButton.className = 'operation-button';
+operationContainer.appendChild(equalButton);
+equalButton.addEventListener('click',function(){
 
+})
