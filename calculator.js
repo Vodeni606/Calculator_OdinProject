@@ -28,9 +28,8 @@ for(let i = 0; i < operations.length;i++){
     button.textContent = operations[i];
     button.className = 'operation-button'
 
-    button.addEventListener('click',function(){
+    button.addEventListener('click',function(){     
         currentOperator = this.textContent;
-        display.value = currentOperator;
         previousInput = currentInput;
         currentInput = '';
         display.value = currentOperator;
@@ -44,6 +43,10 @@ clearButton.textContent =  'C';
 clearButton.className = 'operation-button';
 clearButton.addEventListener('click',function(){
     display.value = '';
+    currentInput = '';
+    currentOperator = '';
+    previousInput = '';
+    previousOperator = '';
 })
 operationContainer.appendChild(clearButton);
 
@@ -55,7 +58,7 @@ equalButton.addEventListener('click',function(){
     if (currentOperator === '+'){
     sum = parseInt(previousInput) + parseInt(currentInput);
     display.value = sum;
-    previousInput = '';
+    previousInput = sum;
     currentInput = '';
     }else if (currentOperator === '-'){
     sum = parseInt(previousInput) - parseInt(currentInput);
